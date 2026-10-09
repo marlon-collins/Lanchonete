@@ -4,8 +4,36 @@
     box-sizing: border-box;    
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+/*----------------------------------------------------///////////////////ESTRUTURA DENTRO DO BODY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\----------------------------------------------------------------*/
+
+main{
+    flex: 1;
+    padding: 20px;
+}
+
+header{
+    margin-bottom: 20px;
+}
+
+
+section{
+    margin-bottom: 40px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 h1{
@@ -20,8 +48,9 @@ p {
 
 
 
+.container-menu ul {
+    display: flex;
 
-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -30,11 +59,11 @@ ul {
 
 }
 
-ul li {
+.container-menu ul li {
     float: left;
 }
 
-ul li a {
+.container-menu ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -42,33 +71,126 @@ ul li a {
     text-decoration: none;
 }
 
-ul li a:hover{
+.container-menu ul li a:hover{
     background-color: #111111;
 
 }
 
-
-
-.hero-image {
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url();
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+#lista-promocoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.card-promocao {
+    background-color: lightgrey;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
 }
 
-div .hero h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: purple;
-    color: #111111;
+
+/* -------------------------------------------------------////// ESTILOS DO FOOTER \\\\\\\\\\\\\\\\\\\\--- ------------------------------*/
+footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
 }
+
+/* Container da parte superior */
+.footer-content {
+  display: flex;
+  flex-direction: column; /* No celular fica empilhado */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Coluna da Marca */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* Links das redes sociais lado a lado */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Lista de links de navegação */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Estilo visual padrão para TODOS os links do footer */
+.footer-links a,
+.social-links a,
+.legal-links a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+/* Efeito ao passar o mouse */
+.footer-links a:hover,
+.social-links a:hover,
+.legal-links a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* Títulos */
+.footer-brand h2,
+.footer-links h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+/* Linha de Créditos */
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin: 30px auto;
+  /*margin-top: 30px;*/
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  max-width: 1200px;
+ /* margin-left: auto;
+  margin-right: auto;*/
+}
+
+/* Links de Termos e Privacidade lado a lado */
+.legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* --- RESPONSIVIDADE (Telas de computador acima de 768px) --- */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
